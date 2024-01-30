@@ -28,7 +28,7 @@ namespace ejemplos_ado_net
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true";
                 //Indico o inyecto la secuencia SQL que quiero ejecutar:
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Numero, Nombre, Descripcion From POKEMONS";
+                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen From POKEMONS";
                 //Le digo que ejecute ese comando en esta conexion:
                 comando.Connection = conexion;
 
@@ -44,6 +44,7 @@ namespace ejemplos_ado_net
                     aux.Numero = lector.GetInt32(0);
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
+                    aux.UrlImagen = (string)lector["UrlImagen"];
 
                     lista.Add(aux);
                 }
