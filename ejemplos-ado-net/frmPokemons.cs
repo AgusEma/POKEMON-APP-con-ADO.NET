@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace ejemplos_ado_net
 {
@@ -18,14 +20,12 @@ namespace ejemplos_ado_net
             InitializeComponent();
         }
 
-        //Invoco la lectura (ya construida) a base de datos:
         private void frmPokemons_Load(object sender, EventArgs e)
         {
-                
             PokemonNegocio negocio = new PokemonNegocio();
-            listaPokemon = negocio.listar();
-            //DataSource recibe un origen de datos y lo modela en la tabla:
+            listaPokemon = negocio.Listar();
             dgvPokemons.DataSource = listaPokemon;
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaPokemon[0].UrlImagen);
         }
 
@@ -43,7 +43,8 @@ namespace ejemplos_ado_net
             }
             catch (Exception ex)
             {
-                pbxPokemon.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+
+                pbxPokemon.Load("https://i0.wp.com/lanecdr.org/wp-content/uploads/2019/08/placeholder.png?w=1200&ssl=1");
             }
         }
     }
