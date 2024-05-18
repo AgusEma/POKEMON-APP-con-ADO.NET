@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplos-ado-net", "ejemplos-ado-net\ejemplos-ado-net.csproj", "{AD0E5E0A-9B0F-44D3-B49A-453977B3672C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winform-app", "ejemplos-ado-net\winform-app.csproj", "{AD0E5E0A-9B0F-44D3-B49A-453977B3672C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{B87BFC96-AC95-4036-97B6-00C6C572238F}"
 EndProject
