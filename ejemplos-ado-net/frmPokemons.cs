@@ -47,5 +47,11 @@ namespace ejemplos_ado_net
                 pbxPokemon.Load("https://i0.wp.com/lanecdr.org/wp-content/uploads/2019/08/placeholder.png?w=1200&ssl=1");
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaPokemon alta = new frmAltaPokemon();
+            alta.ShowDialog();
+        }
     }
 }
