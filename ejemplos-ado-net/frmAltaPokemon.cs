@@ -34,10 +34,27 @@ namespace ejemplos_ado_net
                 poke.Numero = int.Parse(txtNumero.Text);
                 poke.Nombre = txtNombre.Text;
                 poke.Descripcion = txtDescripcion.Text;
+                poke.Tipo = (Elemento)cboTipo.SelectedItem;
+                poke.Debilidad = (Elemento)cboTipo.SelectedItem;
 
                 negocio.agregar(poke);
                 MessageBox.Show("Agregado exitosamente");
                 Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void frmAltaPokemon_Load(object sender, EventArgs e)
+        {
+            ElementoNegocio elementoNegocio = new ElementoNegocio();
+            try
+            {
+                cboTipo.DataSource = elementoNegocio.listar();
+                cboDebilidad.DataSource = elementoNegocio.listar();
             }
             catch (Exception ex)
             {
