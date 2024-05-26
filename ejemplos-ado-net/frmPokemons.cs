@@ -23,10 +23,17 @@ namespace ejemplos_ado_net
         private void frmPokemons_Load(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            listaPokemon = negocio.Listar();
-            dgvPokemons.DataSource = listaPokemon;
-            dgvPokemons.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaPokemon[0].UrlImagen);
+            try
+            {
+                listaPokemon = negocio.Listar();
+                dgvPokemons.DataSource = listaPokemon;
+                dgvPokemons.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaPokemon[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
