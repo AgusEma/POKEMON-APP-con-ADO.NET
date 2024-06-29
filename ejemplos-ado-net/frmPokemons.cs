@@ -125,13 +125,19 @@ namespace ejemplos_ado_net
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
             List<Pokemon> listaFiltrada;
             string filtro = txtFiltro.Text;
 
-            if (filtro != "")
+            if (filtro.Length >= 2)
             {
                 listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
-            } else
+            }
+            else
             {
                 listaFiltrada = listaPokemon;
             }
